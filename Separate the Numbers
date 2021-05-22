@@ -1,0 +1,50 @@
+#include<iostream>
+#include<string>
+#include<sstream>
+using namespace std;
+int main()
+
+{
+    int test; cin>>test;
+    while(test--){                                                  //guys i dont know . but 7 test cases are not passing 
+    string s1; cin>>s1;                                             // may be boundary case are not taken in consideration
+    int len= s1.size();                                             // if some one wants can contibute to it
+    if(len==1)                                                      //
+    {
+        cout<<"NO"<<endl;                                           //      thanks and regard
+    }
+    else                                                            //      avinash kumar yadav
+    {
+    for(int i=1;i<=len/2;i++)
+    {
+        string s2 = s1.substr(0,i);
+        //int num = stoi(s2);
+        stringstream geek(s2);
+ 
+    // The object has the value 12345 and stream
+    // it to the integer x
+    int num = 0;
+    geek >> num;
+    int va = num;
+   // cout<<num<<va<<endl;
+        for(int k=0;k<32;k++)
+        {
+            num=num+1;
+            string s3= to_string(num);
+            s2.append(s3);
+            int s= s2.length();
+            if(s>=len)
+            break;
+        }
+        if(s1==s2 )
+         {
+            cout<<"YES"<<" "<<va<<endl;
+            break;
+        }
+        else if(i==len/2)
+        {  cout<<"NO"<<endl;
+        }
+    }
+    }
+}
+}
